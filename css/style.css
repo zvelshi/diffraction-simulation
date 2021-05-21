@@ -1,0 +1,20 @@
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#intensityGraph {
+  position: absolute;
+  top: 250px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  border:1px solid #d3d3d3;
+}

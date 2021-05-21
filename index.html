@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Single-Slit Diffraction Simulation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js"></script>
+
+</head>
+
+<body onload="onLoad()">
+    <h1>Single-Slit Diffraction Simulation</h1>
+
+    <div class="row">
+        <div class="column">
+            <img src="images/temp-diagram.PNG" style="float:right; padding-right: 30px;"> 
+        </div>
+        <div class="column">
+            <div id="parameters">
+                <h2>Parameters:</h2>
+                <p><label>Wavelength (λ in nm): <input type="number" id="wavelengthNumber"></label></p>
+                <p><label>Slit Width (a in μm): <input type="number" id="slitWidthNumber"></label></p>
+                <p><label>Distance to Screen (L in m): <input type="number" id="distanceNumber"></label></p>
+                <p id="error"></p>
+                <button type="button" value="Submit" onclick="submit()">Submit</button>
+            </div>
+        
+            <div id="selectedParameters" hidden>
+                <h2>Selected Parameters:</h2>
+                <p id="wavelength"></p>
+                <p id="slitwidth"></p>
+                <p id="distance"></p>
+                <button type="button" value="Reset" onclick="reset()">Reset</button>
+            </div>
+        </div>
+    </div> 
+
+    <div id="canvas" hidden>
+        <h2 style="text-align:center;">Intensity vs. Position on Screen Graph</h2>
+        <canvas id="intensityGraph">Canvas Not Supported by Browser</canvas>
+    </div>
+
+</body>
+</html>
