@@ -1,51 +1,143 @@
+
+
 <!doctype html>
-
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Diffraction Simulations</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/content.js"></script>
-
-</head>
-<body onload="single()"> <!--CHANGE THIS BACK TO INFO() BEFORE DEPLOYING-->
-    <div class="container-fluid">
-        <div class="header">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Diffraction Simulations</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+      <script src="js/scripts.js"></script>
+   </head>
+   <body>
+      <div class="container-xl">
+         <div class="header">
             <p>Diffraction Simulation</p>
-        </div>
-        
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="info()">Information Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="single()">Single Slit Simulation</a>
-                </li>
-              </ul>
+         </div>
+         <br><hr><br> 
+         <div class="row">
+            <div class="container">
+               <h1>Key Information</h1>
+               <p>This is a simulation the diffraction of electromagnetic waves in and around the visible range of the human eye. The simulation shows the waves hitting the slit, the folding of these waves, and the image produced on the screen. The intensity as a function of angle is also plotted behind the screen. The simulation takes place with a single slot, and allows you to change the values ​​of three key parameters:</p>
+               <table>
+                  <tr>
+                     <th>Slit Width (a)</th>
+                     <th>Wavelength (λ)</th>
+                     <th>Slit distance from screen (L)</th>
+                  </tr>
+                  <tr>
+                     <td>Specifies the slot width. For the minimum value, the occurring diffraction is the greatest, and for the maximum value, the wave bending becomes almost invisible.</td>
+                     <td>A physical measurement of the length of the electromagnetic wave entering the single slit. In the simulation, the shorter the wavelength, the more fringes appear on the screen. In addition, the visible color of the waves changes of course.</td>
+                     <td>This defines how far the waves must travel in front of the screen. In the simulation, the shorter the distance, the greater the range of the bent wave is visible on the screen.</td>
+                  </tr>
+               </table>
+               <br>
+               <p>The waves visible in the simulation are only illustrative. In fact, the wavelength is too short to scale correctly with the rest of the figure. The same applies to the slit width, taking into account the slit distance from the screen, a slit created at the correct scale would not be visible in the simulation. The parameter determined in the simulation is the wave intensity, the function of which is visible on the right side of the screen. On its basis, the brightness of the fringes on the screen is determined. It is determined using the following formulas:</p>
+               <math display="block">
+                  <mrow>
+                    <mi>I</mi>
+                    <mo>=</mo>
+                    <msup>
+                       <mfenced>
+                          <mfrac>
+                            <mrow>
+                                 <mi>sinα</mi>
+                            </mrow>
+                            <mrow>
+                                 <mi>α</mi>
+                            </mrow>
+                          </mfrac>
+                       </mfenced>
+                    <mn>2</mn>
+                    </msup>
+                  </mrow>
+                  </math>
+               
+                  <math display="block">
+                  <mrow>
+                    <mrow>
+                     <mi>α</mi>
+                     <mo>=</mo>
+                   </mrow>
+                   <mfrac>
+                      <mrow>
+                        <mo>πa</mo>
+                      </mrow>
+                      <mrow>
+                         <mo>λ</mo>
+                      </mrow>
+                   </mfrac>
+                   <mo>sinθ</mo>
+                  </mrow>
+               </math>
             </div>
-          </nav>
-   
-        <div id="area"></div>
-    </div>    
-</body>
+         </div>
+         <br><hr><br>
+         <div class="row">
+            <h1>Simulation</h1>
+            <div class="col-sm">
+               <form name = "form">
+                  <table>
+                     <tr>
+                        <th>Slit Width (a)</th>
+                     </tr>
+                     <td>
+                        <input type="range" onchange="drawSS(); updateTextA(this.value);" name="gap" min="2" max = "32" style="width:100%;" class="form-range"><br>
+                        <pre>1μm                  16μm</pre>
+                        <input type="text" id="a" readonly value="a = 8μm" class="form-control-plaintext">
+                     </td>
+                  </table>
+                  <br>
+                  <table>
+                     <tr>
+                        <th>Wavelength (λ)</th>
+                     </tr>
+                     <td>
+                        <input type="range" onchange="drawSS(); updateTextLamb(this.value);" name="lambda" min="380" max = "760" style="width:100%;" class="form-range"><br>
+                        <img src="images/wavelength.png" alt="[Colour Spectrum Image]" style="width:100%;"><br>
+                        <input type="text" id="lamb" readonly value="λ = 570nm (visible)" class="form-control-plaintext">
+                     </td>
+                  </table>
+                  <br>
+                  <table>
+                     <tr>
+                        <th>Distance to Screen (L)</th>
+                     </tr>
+                     <td>
+                        <input type="range" onchange="drawSS(); updateTextScreen(this.value);" name="L" min="0" max = "100" style="width:100%;" class="form-range"><br>
+                        <pre>0.5m                 2.5m</pre>
+                        <input type="text" id="screen" readonly value="L = 1.5m" class="form-control-plaintext">
+                     </td>
+                  </table>
+               </form>
+            </div>
+            <div class="col-lg-6">
+               <br><br>
+               <canvas id="diffraction">Browser Doesn't Support Canvas</canvas>
+               <input type="button" class="btn btn-primary" onclick="simulateSS()" value="START">
+            </div>
+            <div class="col-md"><br><Br><Br>
+               <h2>How to Simulate</h2>
+               <p>
+                  1. Use the range selectors to choose desired parameters for slit width (a), wavelength of light (λ) and distance to screen (L). <br>
+                  2. Hit the "START" button. <br> <br>
+                  <i>*if the parameters are changed while the simulation is running, the changes will be reflected live onto the simulation pane.</i>
+               </p>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
-
 <!--
-    ---todo---
-    * annotate code
-    * change singe() to info() on index page
-    * write lesson for info page
-    * finish text on single page
-    * css for all
--->
+   ---todo---
+   * annotate code
+   * change singe() to info() on index page
+   * write lesson for info page
+   * finish text on single page
+   * css for all
+   -->
+

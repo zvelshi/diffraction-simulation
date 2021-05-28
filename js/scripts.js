@@ -205,7 +205,12 @@ function updateTextD(x) {
 }
 
 function updateTextLamb(x) {
-    document.getElementById("lamb").value="λ = " + x + "nm"; 
+    if (x <= 400)
+		document.getElementById("lamb").value="λ = " + x + "nm (ultraviolet)";
+	else if (x >= 750)
+		document.getElementById("lamb").value="λ = " + x + "nm (infrared)"; 
+	else
+		document.getElementById("lamb").value="λ = " + x + "nm (visible)"; 	
 }
 
 function updateTextScreen(x) {
