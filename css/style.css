@@ -1,43 +1,33 @@
-/* colour scheme
-violet blue crayola - 8787D7
-magnolia - F0F0FA
-silver - c9c9c9
-quick silver - a3a3a3
-onyx - 424242
-*/
-
 .header {
-    padding-top: 10px;
-    color: #424242;
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    font-size: 58px;
+	padding-top: 10px;
+	color: #424242;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-weight: 600;
+	font-size: 58px;
 }
 
 table {
-    border: 2px solid #424242;
+	border: 2px solid #424242;
+	text-align: center;
 }
 
-td, th{
-    padding: 5px;
-} 
+td, th {
+	padding: 5px;
+}
 
 canvas {
-    border: 2px solid #424242;
-    background-color: lightgrey;
-    width: 100%;
-    height: auto;
+	border: 2px solid #424242;
+	background-color: lightgrey;
+	width: 100%;
+	height: auto;
 }
 
 table {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 h1 {
-    text-decoration: underline;
-}
-
-h1, table{
-    text-align: center;
+	text-decoration: underline;
+	text-align: center;
 }
