@@ -1,17 +1,34 @@
-.header {
-    background-color: #F1F1F1;
-    text-align: center;
-    padding: 20px;
-  }
+/* colour scheme
+violet blue crayola - 8787D7
+magnolia - F0F0FA
+silver - c9c9c9
+quick silver - a3a3a3
+onyx - 424242
+*/
 
+.header {
+    background-color: #F0F0FA;
+    padding: 10px;
+    color: #424242;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 58px;
+}
+/*
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+*/
 table, td, th {
     border: 1px solid black;
 }
 
 td, th{
     padding: 5px;
-}
-
+} 
+/*
 ul {
     list-style-type: none;
     margin: 0;
@@ -34,4 +51,19 @@ li a {
   
 li a:hover {
     background-color: #111;
-  }
+  } */
+
+canvas {
+    border: 2px solid #424242;
+    background-color: lightgrey;
+    width: 100%;
+    height: auto;
+}
+
+table {
+    margin: 0 auto;
+}
+
+h2, table{
+    text-align: center;
+}

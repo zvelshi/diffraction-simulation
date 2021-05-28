@@ -57,7 +57,7 @@ function drawStaticElementsSS(){
 	ctx.fillRect(445, 290, 10, 1);
 
 	ctx.font = "16px Arial";
-	ctx.fillText("Intensity (α)", 500, 14);
+	ctx.fillText("Intensity (α)", 500, 20);
 
 	ctx.font = "10px Arial";
 	ctx.fillText("-18cm", 460, 13);
