@@ -6,6 +6,7 @@ function simulateSS() {
 	drawSS();
 }
 
+// clear canvas, draw static graph background and draw waves
 function drawSS() {
 	if (startSS == 1) {
 		clearCanvas();
@@ -14,6 +15,7 @@ function drawSS() {
 	}
 }
 
+// clear canvas, set black and white backgrounds
 function clearCanvas() {
 	let canvas = document.getElementById("diffraction");
 	canvas.width = 600;
@@ -25,6 +27,7 @@ function clearCanvas() {
 	ctx.fillRect(440, 0, 600, 600);
 }
 
+// draw static graph elements 
 function drawStaticElementsSS() {
 	let canvas = document.getElementById("diffraction");
 	let ctx = canvas.getContext("2d");
@@ -65,6 +68,7 @@ function drawStaticElementsSS() {
 	ctx.fillText("0", 440, 150);
 }
 
+// draw wave intensity for single slit
 function drawWaveAndIntensitySS() {
 	let canvas = document.getElementById("diffraction");
 	let ctx = canvas.getContext("2d");
@@ -128,10 +132,12 @@ function drawWaveAndIntensitySS() {
 	}
 }
 
+// convert sin(x) inputs to coordinates on the grid
 function sinToCoords(x) {
 	return 450 + 120 * x;
 }
 
+// covert wavelength in nm to rgb colour codes
 function wavelengthToColor(wavelength) {
 	let r, g, b, alpha, colourSpace;
 	let wl = wavelength;
@@ -187,23 +193,28 @@ function wavelengthToColor(wavelength) {
 	return colourSpace;
 }
 
+// convert rgb to hex
 function componentToHex(c) {
 	let hex = c.toString(16);
 	return hex.length == 1 ? "0" + hex : hex;
 }
 
+// convert hex to rgb
 function rgbToHex(r, g, b) {
 	return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
+// live update "A" value on page
 function updateTextA(x) {
 	document.getElementById("a").value = "a = " + x / 2 + "μm";
 }
 
+// live update "d" value on page
 function updateTextD(x) {
 	document.getElementById("d").value = "d = " + x + "mm";
 }
 
+// live update "wavelength" value on page
 function updateTextLamb(x) {
 	if (x <= 400)
 		document.getElementById("lamb").value = "λ = " + x + "nm (ultraviolet)";
@@ -213,6 +224,7 @@ function updateTextLamb(x) {
 		document.getElementById("lamb").value = "λ = " + x + "nm (visible)";
 }
 
+// live update "L" value on page
 function updateTextScreen(x) {
 	let s = 1.5 + (x * 2 - 100) * 0.5 / 50.;
 	document.getElementById("screen").value = "L = " + s + "m";
